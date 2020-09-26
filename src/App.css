@@ -1,38 +1,203 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+
+* {
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+    max-width: 100vw;
+    min-height: 100vh;
+    background-image: url('./Images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #254864;
+    color: #f3f3f3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.social a {
+    color: #f3f3f3;
+    background-color: #3a678f6b;
+    padding: 15px;
+    margin:  10px 20px;
+    border-radius: 40%;
 }
 
-.App-link {
-  color: #61dafb;
+.social a:hover {
+    background-color: #3a678f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+    font-weight: bolder;
+    color: #2b4a64;
+    text-shadow: 1px #1a2b3a;
+    text-align: center;
+}
+
+hr {
+    width: 50vw;
+    height: 3px;
+    background-color: #2b4a64;
+    margin: 5% auto;
+    border-radius: 100%;
+}
+
+.card, .result {
+    min-width: 50vw;
+    min-height: 50vh;
+    background-color: #f3f3f3;
+    padding: 20px 10px;
+    border-radius: 20px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 2px 2px #d8d8d896;
+    margin: 15px 0;
+}
+
+.configuration {
+    margin: 7% 10%;
+}
+
+.result h1 {
+    text-decoration: underline;
+}
+.score {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.startBtn,
+.submit-btn {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+    font-size: larger;
+    background-color: #2e4e6a;
+    color: #f3f3f3;
+    text-shadow: 1px 1px #969696;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    transition: 0.2s all;
+}
+
+.startBtn:hover {
+    background-color: #3a678f;
+}
+
+
+.questionCard {
+    padding: 15px;
+}
+
+.questionAlign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionAlign div {
+    margin: 5px 0;
+}
+
+.question {
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+.loader {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 920px) and (min-width: 601px) {
+    .card, .result {
+        min-width: 60vw;
+        min-height: 50vh;
+    }
+
+    .configuration {
+        margin: 10% 5%;
+    }
+}
+
+
+@media screen and (max-width: 600px) and (min-width: 400px) {
+    .card, .result {
+        min-width: 80vw;
+        min-height: 50vh;
+    }
+
+    hr {
+        width: 70vw;
+    }
+
+    .configuration {
+        margin: 12% 5%;
+    }
+}
+
+
+@media screen and (max-width: 399px) and (min-width: 200px) {
+    .card, .result {
+        min-width: 80vw;
+        min-height: 50vh;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    hr {
+        width: 70vw;
+    }
+
+    .configuration {
+        margin: 15% 3%;
+    }
+
+    .footer h2 {
+        font-size: 100%;
+    }
+
+    .social label {
+        font-size: 100%;
+    }
+
+    .social a {
+        padding: 5px;
+        margin:  5px 10px;
+    }
 }
