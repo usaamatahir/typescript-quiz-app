@@ -4,9 +4,18 @@ import { QuizDetails } from './API/QuizData';
 import { DIFFICULTY, Question } from './Types/quizTypes';
 import {QuestionCard, InputCard, Footer} from './QuizComponent';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import firebase from './firebase'
 
 
 function App() {
+
+  const messaging = firebase.messaging();
+  messaging.requestPermission().then((permission) => {
+    return messaging.getToken();
+  }).then((token) => {
+    console.log("Token => ", token)
+  })
+  
 
   let [quiz, setQuiz] = useState<Question[]>([]);
   let [totalQuestion, setTotalQuestion] = useState<number>(5);
@@ -85,6 +94,18 @@ function App() {
         </div>
       </div>
     );
+  }
+
+  if (!navigator.onLine) {
+    return (
+      <div className='app' >
+      <div className='heading'>
+        <h1>Online Quiz Application</h1>
+        <hr />
+        <h1 className='offline'>Please Make Sure Your internet Connection is working to start quiz.</h1>
+      </div>
+    </div>
+    )
   }
 
   return (
